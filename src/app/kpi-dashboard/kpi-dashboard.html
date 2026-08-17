@@ -1,0 +1,76 @@
+<div class="dashboard" #dashboard>
+
+  <div
+    class="kpi-card"
+    *ngFor="let kpi of kpis; let i = index"
+  >
+
+    <!-- Header -->
+    <div class="kpi-header">
+
+      <div class="kpi-title">
+        <span class="cube-icon">◈</span>
+        {{ kpi.title }}
+      </div>
+
+      <div class="kpi-total">
+        {{ kpi.total  }}
+      </div>
+
+    </div>
+
+
+    <!-- Unit -->
+    <div class="kpi-unit">
+      {{ kpi.unit }}
+    </div>
+
+
+    <!-- Legend -->
+    <div class="kpi-legend">
+
+      <div
+        class="legend-item"
+        *ngFor="let item of kpi.items"
+      >
+
+        <span
+          class="legend-dot"
+          [style.background]="item.color"
+        ></span>
+
+        <span class="legend-label">
+          {{ item.label }}
+        </span>
+
+        <span class="legend-value">
+          {{ item.value }}
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- D3 Progress Bar -->
+    <div
+      class="progress-container"
+      [id]="'progress-' + i"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- Demo button -->
+<div class="actions">
+
+  <button
+    type="button"
+    (click)="updateMovementData()"
+  >
+    Randomize Movement Data
+  </button>
+
+</div>
