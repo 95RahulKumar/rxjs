@@ -1,0 +1,52 @@
+.svg-parent {
+    padding: 24px 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 80vh;
+}
+
+.svg-container {
+    overflow: hidden;
+}
+
+.coach {
+    cursor: pointer;
+}
+
+
+.path {
+    width: 100%;
+}
+
+.beam {
+    animation: beam-pulse 2.4s ease-in-out infinite;
+}
+
+.bulb {
+    animation: bulb-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes beam-pulse {
+
+    0%,
+    100% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes bulb-pulse {
+
+    0%,
+    100% {
+        fill: #FFD54A;
+    }
+
+    50% {
+        fill: #ffec8033;
+    }
+}

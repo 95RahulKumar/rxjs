@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KpiDashboard } from './kpi-dashboard';
+import { RenderSvg } from './render-svg';
 
-describe('KpiDashboard', () => {
-  let component: KpiDashboard;
-  let fixture: ComponentFixture<KpiDashboard>;
+describe('RenderSvg', () => {
+  let component: RenderSvg;
+  let fixture: ComponentFixture<RenderSvg>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KpiDashboard]
+      imports: [RenderSvg]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(KpiDashboard);
+    fixture = TestBed.createComponent(RenderSvg);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
