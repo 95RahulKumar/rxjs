@@ -1,0 +1,42 @@
+<h2 mat-dialog-title class="msd-title">{{ data.title }}</h2>
+
+<div mat-dialog-content class="msd-content">
+  @if (data.subtitle) {
+    <p class="msd-subtitle">{{ data.subtitle }}</p>
+  }
+
+  <ul class="msd-rows">
+    @for (step of (data.steps$ | async); track step.id) {
+      <li class="msd-row">
+        <span class="msd-loader-slot">
+          @if (step.status === 'loading') {
+            <span class="msd-spinner" aria-hidden="true"></span>
+          }
+        </span>
+
+        <span class="msd-label">{{ step.label }}</span>
+
+        <span class="msd-result-slot">
+          @if (step.status === 'success') {
+            <svg class="msd-icon-svg" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="10" fill="var(--msd-success)" />
+              <path
+                d="M6 10.5l2.5 2.5L14 7.5"
+                stroke="white"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          }
+          @if (step.status === 'pending') {
+            <svg class="msd-icon-svg" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="10" fill="var(--msd-error)" />
+              <path d="M7 7l6 6M13 7l-6 6" stroke="white" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          }
+        </span>
+      </li>
+    }
+  </ul>
+</div>
